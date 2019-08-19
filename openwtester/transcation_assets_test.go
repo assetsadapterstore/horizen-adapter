@@ -120,16 +120,18 @@ func testSubmitTransactionStep(tm *openw.WalletManager, rawTx *openwallet.RawTra
 func TestTransfer(t *testing.T) {
 
 	targets := []string{
-		"znZSkuAe1qJWFTL98fnGCpbVg7CCkZeSARs",
-		"znX5wYUndj1i262mut8Xt5FknJJuCso8iY5",
-		"znUYMLEA8XnX82xKWd69BiJKwkRHcqShLS3",
-		"znhhe72rJYz2CSkiYbEfF6zUM2WPc3Emhek",
-		"znoytWEjm6Nj31YzoazDckwphyokXV5afcp",
-		"znZF6V3ZD8GBaP4WBHkwTx9B1pdyZQtrDpk",
-		"znkULpiHSh29cVRkqnTrhkv6QLhjYy8x1Mp",
-		"znZYiTZHT3E7rM27126H28igqkprUmwdT1g",
-		"znZue1KniiH2etpBnnNY3NR1CjtkNqxSjfD",
-		"zncV1kiXnyDAMqEosFpGG5MKRG668KtBFGd",
+		//"znZSkuAe1qJWFTL98fnGCpbVg7CCkZeSARs",
+		//"znX5wYUndj1i262mut8Xt5FknJJuCso8iY5",
+		//"znUYMLEA8XnX82xKWd69BiJKwkRHcqShLS3",
+		//"znhhe72rJYz2CSkiYbEfF6zUM2WPc3Emhek",
+		//"znoytWEjm6Nj31YzoazDckwphyokXV5afcp",
+		//"znZF6V3ZD8GBaP4WBHkwTx9B1pdyZQtrDpk",
+		//"znkULpiHSh29cVRkqnTrhkv6QLhjYy8x1Mp",
+		//"znZYiTZHT3E7rM27126H28igqkprUmwdT1g",
+		//"znZue1KniiH2etpBnnNY3NR1CjtkNqxSjfD",
+		//"zncV1kiXnyDAMqEosFpGG5MKRG668KtBFGd",
+
+		"znkvsEfqqiJ7r9MPiUnoH4bUdkBKDAGx3m4",
 	}
 
 	tm := testInitWalletManager()
@@ -140,7 +142,7 @@ func TestTransfer(t *testing.T) {
 	testGetAssetsAccountBalance(tm, walletID, accountID)
 
 	for _, to := range targets {
-		rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.001", "", nil)
+		rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.2", "", nil)
 		if err != nil {
 			return
 		}
@@ -170,6 +172,7 @@ func TestSummary(t *testing.T) {
 	tm := testInitWalletManager()
 	walletID := "W99vKMidCHAfmp3ngHUqFvDCW5ZjqMRrGL"
 	accountID := "8KZUN5R5jrP2c5K3JMpbjUB6fvzVfpvps863efBd9DMZ"
+	//accountID := "Dj9fVqqLug4a9n1jkXCSytwxtdxMSgwCTVVqZSyZcBcL"
 	summaryAddress := "znowCwfo4iz7mfndyqH4F2JLbWy19fESBsd"
 
 	testGetAssetsAccountBalance(tm, walletID, accountID)

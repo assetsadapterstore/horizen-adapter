@@ -28,6 +28,6 @@ const (
 )
 
 var (
-	MainNetAddressPrefix = zencashTransaction.AddressPrefix{[]byte{0x20, 0x89}, nil, "zen"}
-	TestNetAddressPrefix = zencashTransaction.AddressPrefix{[]byte{0x20, 0x98}, nil, "zen"}
+	MainNetAddressPrefix = zencashTransaction.AddressPrefix{[]byte{0x20, 0x89}, []byte{0x20, 0x96}, "zen"}
+	TestNetAddressPrefix = zencashTransaction.AddressPrefix{[]byte{0x20, 0x98}, []byte{0x20, 0x96}, "zen"}
 )
